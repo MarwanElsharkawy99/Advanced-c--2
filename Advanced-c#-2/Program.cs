@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Advanced_c__2;
 
 internal class Program
 {
@@ -173,12 +174,26 @@ internal class Program
 
 
         #region question3
-        List<int> l = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
-        List<int> evenList = EvenList(l);
-        foreach (int item in evenList)
-        {
-            Console.WriteLine(item);
-        }
+        //List<int> l = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        //List<int> evenList = EvenList(l);
+        //foreach (int item in evenList)
+        //{
+        //    Console.WriteLine(item);
+        //}
+        #endregion
+
+        #region question4
+
+        FixedSizeList<int> fixedSizeList = new FixedSizeList<int>(5);
+        fixedSizeList.Add(1);
+        fixedSizeList.Add(2);
+        fixedSizeList.Add(3);
+        fixedSizeList.Add(4);
+        fixedSizeList.Add(5);
+        fixedSizeList.Add(6);
+
+        Console.WriteLine(fixedSizeList.Get(7));
+
         #endregion
     }
 }
