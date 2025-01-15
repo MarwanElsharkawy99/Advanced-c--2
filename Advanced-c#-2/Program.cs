@@ -1,5 +1,18 @@
-﻿internal class Program
+﻿using System.Collections;
+
+internal class Program
 {
+
+    public static void CustomReverse(ref ArrayList arr)
+    {
+        int n = arr.Count;
+        for (int i = 0; i < n / 2; i++)
+        {
+            int temp =(int) arr[i];
+            arr[i] = arr[n - i - 1];
+            arr[n - i - 1] = temp;
+        }
+    }
     private static void Main(string[] args)
     {
         #region question1
@@ -19,8 +32,8 @@
    
          
          */
-        int[] arr = { 1, 2, 3, 4, 5 };
-        Console.WriteLine(arr[2]);
+        //int[] arr = { 1, 2, 3, 4, 5 };
+        //Console.WriteLine(arr[2]);
 
         #endregion
 
@@ -34,9 +47,9 @@
          
          */
 
-        List<int> lst = new List<int> { 1, 2, 3, 4, 5 };
-        lst.Add(6); 
-        lst.Remove(2);
+        //List<int> lst = new List<int> { 1, 2, 3, 4, 5 };
+        //lst.Add(6); 
+        //lst.Remove(2);
         #endregion
 
         #region 3-LinkedList
@@ -48,9 +61,9 @@
          Business Case: in applications where elements need to be added or removed frequently
          
          */
-        LinkedList<int> linkedList = new LinkedList<int>();
-        linkedList.AddLast(1);
-        linkedList.AddLast(2);
+        //LinkedList<int> linkedList = new LinkedList<int>();
+        //linkedList.AddLast(1);
+        //linkedList.AddLast(2);
 
         #endregion
 
@@ -63,10 +76,10 @@
          
          */
 
-        Dictionary<int, string> dictionary = new Dictionary<int, string>();
-        dictionary.Add(1, "one");
-        dictionary.Add(2, "two");
-        dictionary.Remove(1);
+        //Dictionary<int, string> dictionary = new Dictionary<int, string>();
+        //dictionary.Add(1, "one");
+        //dictionary.Add(2, "two");
+        //dictionary.Remove(1);
         #endregion
 
         #region 5-HashSet
@@ -78,10 +91,10 @@
          
          */
 
-        HashSet<int> hashSet = new HashSet<int>();
-        hashSet.Add(1);
-        hashSet.Add(2);
-        hashSet.Remove(1);
+        //HashSet<int> hashSet = new HashSet<int>();
+        //hashSet.Add(1);
+        //hashSet.Add(2);
+        //hashSet.Remove(1);
         #endregion
 
         #region 6-Stack
@@ -94,10 +107,10 @@
          
          */
 
-        Stack<int> stack = new Stack<int>();
-        stack.Push(1);
-        stack.Push(2);
-        stack.Pop();
+        //Stack<int> stack = new Stack<int>();
+        //stack.Push(1);
+        //stack.Push(2);
+        //stack.Pop();
         #endregion
 
         #region 7-Queue
@@ -110,13 +123,30 @@
          
          */
 
-        Queue<int> queue = new Queue<int>();
-        queue.Enqueue(1);
-        queue.Enqueue(2);
-        queue.Dequeue();
+        //Queue<int> queue = new Queue<int>();
+        //queue.Enqueue(1);
+        //queue.Enqueue(2);
+        //queue.Dequeue();
 
 
         #endregion
+
+        #endregion
+
+
+        #region question2
+        ArrayList x = new ArrayList();
+
+        x.Add(1);
+
+        x.Add(2);
+        CustomReverse(ref x);
+        foreach (int item in x)
+        {
+            Console.WriteLine(item);
+        }
+
+
 
         #endregion
     }
