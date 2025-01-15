@@ -13,6 +13,27 @@ internal class Program
             arr[n - i - 1] = temp;
         }
     }
+
+    public static List<int> EvenList(List<int> l) { 
+        List<int> evenList = new List<int>();
+        for (int i = 0; i < l.Count; i++)
+        {
+
+            if (l[i] % 2 == 0)
+            {
+                evenList.Add(l[i]);
+            }
+        }
+
+
+
+
+
+
+        return evenList;
+
+
+    }
     private static void Main(string[] args)
     {
         #region question1
@@ -135,19 +156,29 @@ internal class Program
 
 
         #region question2
-        ArrayList x = new ArrayList();
+        //ArrayList x = new ArrayList();
 
-        x.Add(1);
+        //x.Add(1);
 
-        x.Add(2);
-        CustomReverse(ref x);
-        foreach (int item in x)
+        //x.Add(2);
+        //CustomReverse(ref x);
+        //foreach (int item in x)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+
+
+        #endregion
+
+
+        #region question3
+        List<int> l = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        List<int> evenList = EvenList(l);
+        foreach (int item in evenList)
         {
             Console.WriteLine(item);
         }
-
-
-
         #endregion
     }
 }
